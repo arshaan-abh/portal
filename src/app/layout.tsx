@@ -1,7 +1,10 @@
-import { Inter } from "next/font/google";
+import { Vazirmatn } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic"],
+  variable: "--font-vazirmatn",
+});
 
 export default function RootLayout({
   children,
@@ -9,8 +12,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="fa">
+      <body
+        className={`bg-slate-300 font-vazirmatn text-slate-900 ${vazirmatn.variable}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
