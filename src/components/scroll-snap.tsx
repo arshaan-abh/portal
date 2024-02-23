@@ -13,11 +13,12 @@ import cubicBezierInterpolation from "../utilities/cubic-bezier-interpolation";
 import supportsTouch from "../utilities/supports-touch";
 import defaultListenerOptions from "../utilities/default-listener-options";
 import { raf, caf } from "../utilities/animation-frame";
+import bezierEasing from "bezier-easing";
 import "./scroll-snap.css";
 
 interface ScrollSnapProps extends HTMLProps<HTMLDivElement> {
   duration: number;
-  cubicBezier: (t: number) => number;
+  cubicBezier: [number, number, number, number];
 }
 
 const ScrollSnap: FC<ScrollSnapProps> = (props) => {
@@ -146,7 +147,7 @@ const ScrollSnap: FC<ScrollSnapProps> = (props) => {
     if (!windowHeight) return;
 
     cubicBeziers.current = cubicBezierInterpolation({
-      cubicBezier,
+      cubicBezier: bezierEasing(...cubicBezier),
       duration,
       startNumber: 0,
       endNumber: windowHeight,
