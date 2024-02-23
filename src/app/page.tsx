@@ -1,18 +1,14 @@
 import type { FC } from "react";
+import ScrollSnap from "@src/components/scroll-snap";
+import HeroSection from "@src/components/hero-section";
+import Step1Section from "@src/components/step-1-section";
 
 const Home: FC = () => {
   return (
-    <>
-      <div className="flex h-96 items-center justify-center bg-slate-900 p-8 text-center text-4xl font-bold text-slate-50">
-        با ۷ کلیک ساده وبسایت بسازید
-      </div>
-      <div className="m-8 flex justify-center">
-        <div className="w-96 rounded-2xl border border-slate-400 bg-slate-50 p-8">
-          <div>محتوای فرم سایت‌ساز</div>
-        </div>
-      </div>
-      <div className="text-center text-slate-400">حقوق محفوظ است</div>
-    </>
+    <ScrollSnap duration={1000} cubicBezier={[0.4, 0, 0.2, 1]}>
+      <HeroSection />
+      <Step1Section />
+    </ScrollSnap>
   );
 };
 

@@ -13,11 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa">
-      <body
-        className={`bg-slate-300 font-vazirmatn text-slate-900 ${vazirmatn.variable}`}
-      >
-        {children}
-      </body>
+      <body className={`font-vazirmatn ${vazirmatn.variable}`}>{children}</body>
     </html>
   );
 }
