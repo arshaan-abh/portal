@@ -54,7 +54,7 @@ const Step: FC<StepProps> = ({
   return (
     <>
       {image}
-      <h3 className="text-2xl font-semibold text-white">{title}</h3>
+      <h3 className="mb-2 text-2xl font-semibold text-white">{title}</h3>
       <div className="flex w-1/4 flex-col gap-2">
         <input
           type={inputType}
