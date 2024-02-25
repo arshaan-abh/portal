@@ -24,6 +24,8 @@ interface ScrollSnapProps extends HTMLProps<HTMLDivElement> {
 const ScrollSnap: FC<ScrollSnapProps> = (props) => {
   const { duration, cubicBezier, className, ...otherProps } = props;
 
+  const isClient = typeof window === "object";
+
   const [windowHeight, setWindowHeight] = useState<number | null>(null);
   const [index, setIndex] = useLocalStorageState("index", 0);
 
@@ -133,6 +135,7 @@ const ScrollSnap: FC<ScrollSnapProps> = (props) => {
   );
 
   useEffect(() => {
+    if (!isClient) return;
     if (!supportsTouch) return;
 
     addEventListener("pointerdown", pointerDownHandler, defaultListenerOptions);
@@ -141,7 +144,7 @@ const ScrollSnap: FC<ScrollSnapProps> = (props) => {
       removeEventListener("pointerdown", pointerDownHandler);
       removeEventListener("pointermove", pointerMoveHandler);
     };
-  }, [pointerDownHandler, pointerMoveHandler]);
+  }, [isClient, pointerDownHandler, pointerMoveHandler]);
 
   useEffect(() => {
     if (!windowHeight) return;

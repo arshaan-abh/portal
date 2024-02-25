@@ -19,7 +19,8 @@ const useLocalStorageState = <T,>(
   initialValue: T,
 ): [T, React.Dispatch<Action<T>>] => {
   const [state, dispatch] = useReducer(reducer, initialValue, () => {
-    const localStorageValue = localStorage.getItem(key);
+    const localStorageValue =
+      typeof localStorage === "object" && localStorage.getItem(key);
     return localStorageValue ? JSON.parse(localStorageValue) : initialValue;
   });
 
