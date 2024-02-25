@@ -2,6 +2,7 @@ import Navbar from "@src/components/navbar";
 import type { FC } from "react";
 import Image from "next/image";
 import title from "/public/title.png";
+import downSmall from "/public/down-small.png";
 import titleBg from "/public/title-bg.png";
 import rocket from "/public/rocket.png";
 import planets from "/public/planets.png";
@@ -31,7 +32,13 @@ const HeroSection: FC = () => {
         src={titleBg}
         alt="پس زمینه تیتر"
       />
-      <div className="absolute inset-0 top-auto h-[139px] animate-border bg-border bg-repeat-x" />
+      <div className="absolute inset-0 top-auto flex h-[139px] animate-border items-end justify-center bg-border bg-repeat-x">
+        <Image
+          src={downSmall}
+          alt="به سمت پایین اسکرول کنید"
+          className="pointer-events-none mb-4 animate-bounce select-none"
+        />
+      </div>
       <Image
         className="absolute inset-0 m-auto"
         src={title}
