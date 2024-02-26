@@ -5,6 +5,7 @@ import Step1Section from "@/components/step-1-section";
 import Step2Section from "@/components/step-2-section";
 import Step3Section from "@/components/step-3-section";
 import Step4Section from "@/components/step-4-section";
+import Step5Section from "@/components/step-5-section";
 
 const Home: FC = () => {
   return (
@@ -14,6 +15,7 @@ const Home: FC = () => {
       <Step2Section />
       <Step3Section />
       <Step4Section />
+      <Step5Section />
     </ScrollSnap>
   );
 };
