@@ -1,9 +1,9 @@
 import type { FC } from "react";
-import ScrollSnap from "@src/components/scroll-snap";
-import HeroSection from "@src/components/hero-section";
-import Step1Section from "@src/components/step-1-section";
-import Step2Section from "@src/components/step-2-section";
-import Step3Section from "@src/components/step-3-section";
+import ScrollSnap from "@/components/scroll-snap";
+import HeroSection from "@/components/hero-section";
+import Step1Section from "@/components/step-1-section";
+import Step2Section from "@/components/step-2-section";
+import Step3Section from "@/components/step-3-section";
 
 const Home: FC = () => {
   return (

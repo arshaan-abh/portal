@@ -1,4 +1,4 @@
-import Navbar from "@src/components/navbar";
+import Navbar from "@/components/navbar";
 import type { FC } from "react";
 import Image from "next/image";
 import title from "/public/title.png";

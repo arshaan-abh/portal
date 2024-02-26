@@ -2,8 +2,16 @@ import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
+  darkMode: ["class"],
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       width: {
         main: "80rem",
@@ -17,6 +25,14 @@ const config: Config = {
         "border-reverse": "url('/border-reverse.png')",
       },
       keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
         rocket: {
           "0%": { transform: "translate(0,0)" },
           "100%": { transform: "translate(-1rem,1rem)" },
@@ -31,6 +47,8 @@ const config: Config = {
         },
       },
       animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
         "spin-slow": "spin 10s linear infinite",
         "spin-slower": "spin 20s linear infinite reverse",
         rocket: "rocket 1s ease-in-out infinite alternate",
@@ -42,7 +60,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
 
 export default config;
