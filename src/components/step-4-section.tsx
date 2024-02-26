@@ -5,7 +5,7 @@ import four from "/public/four.png";
 
 const Step4Section: FC = () => {
   return (
-    <div className="flex flex-col items-center gap-4 bg-gray-300">
+    <div className="flex flex-col items-center gap-4 bg-gray-100">
       <div className="grow" />
       <Image src={four} alt="مرحله چهارم" />
       <h3 className="mb-2 text-2xl font-semibold">تنظیمات قالب</h3>

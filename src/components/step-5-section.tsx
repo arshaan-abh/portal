@@ -6,7 +6,7 @@ import downSmall from "/public/down-small.png";
 const Step5Section: FC = () => {
   return (
     <div className="flex flex-col items-center">
-      <div className="pointer-events-none h-[207px] w-full animate-border select-none bg-gray-300 bg-border bg-repeat-x" />
+      <div className="pointer-events-none h-[207px] w-full animate-border select-none bg-gray-100 bg-border bg-repeat-x" />
       <div className="flex w-full grow flex-col items-center gap-4 bg-red">
         <Image
           src={five}
