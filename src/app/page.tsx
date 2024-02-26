@@ -3,6 +3,7 @@ import ScrollSnap from "@src/components/scroll-snap";
 import HeroSection from "@src/components/hero-section";
 import Step1Section from "@src/components/step-1-section";
 import Step2Section from "@src/components/step-2-section";
+import Step3Section from "@src/components/step-3-section";
 
 const Home: FC = () => {
   return (
@@ -10,6 +11,7 @@ const Home: FC = () => {
       <HeroSection />
       <Step1Section />
       <Step2Section />
+      <Step3Section />
     </ScrollSnap>
   );
 };

@@ -36,7 +36,7 @@ const Step2Section: FC = () => {
         </a>
         <a className="text-end text-sm text-white">عضو هستم</a>
       </div>
-      <div className="min-h-4 grow" />
+      <div className="grow" />
       <Image
         src={downSmall}
         alt="به سمت پایین اسکرول کنید"

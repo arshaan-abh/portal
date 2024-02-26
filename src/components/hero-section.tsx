@@ -32,7 +32,7 @@ const HeroSection: FC = () => {
         src={titleBg}
         alt="پس زمینه تیتر"
       />
-      <div className="absolute inset-0 top-auto flex h-[139px] animate-border items-end justify-center bg-border bg-repeat-x">
+      <div className="absolute inset-0 top-auto flex h-[138px] animate-border items-end justify-center bg-border bg-repeat-x">
         <Image
           src={downSmall}
           alt="به سمت پایین اسکرول کنید"

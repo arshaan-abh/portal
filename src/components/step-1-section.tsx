@@ -44,7 +44,7 @@ const Step1Section: FC = () => {
           buttonText="ورود"
         />
       </div>
-      <div className="pointer-events-none flex h-[139px] w-full animate-border select-none items-end justify-center bg-border bg-repeat-x">
+      <div className="pointer-events-none flex h-[138px] w-full animate-border select-none items-end justify-center bg-border bg-repeat-x">
         <Image
           src={downSmall}
           alt="به سمت پایین اسکرول کنید"
