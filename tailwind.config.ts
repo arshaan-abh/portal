@@ -13,17 +13,6 @@ const config: Config = {
       },
     },
     extend: {
-      width: {
-        main: "80rem",
-      },
-      colors: {
-        red: "#FF2857",
-        sky: "#050C38",
-      },
-      backgroundImage: {
-        border: "url('/border.png')",
-        "border-reverse": "url('/border-reverse.png')",
-      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -57,6 +46,18 @@ const config: Config = {
       },
       fontFamily: {
         vazirmatn: ["var(--font-vazirmatn)", ...defaultTheme.fontFamily.sans],
+      },
+      width: {
+        main: "80rem",
+      },
+      backgroundImage: {
+        border: "url('/border.png')",
+        "border-reverse": "url('/border-reverse.png')",
+      },
+      colors: {
+        red: "#FF2857",
+        sky: "#050C38",
+        "light-gray": "#FAFAFD",
       },
     },
   },
