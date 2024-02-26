@@ -48,3 +48,5 @@ interface CardProps {
 const Card: FC<CardProps> = ({ image, name }) => {
   return <Image src={image} alt={name} />;
 };
+
+// TODO implement carousel item's design
