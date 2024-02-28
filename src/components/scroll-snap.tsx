@@ -9,10 +9,10 @@ import {
 } from "react";
 import HTMLProps from "../interfaces/html-props";
 import useLocalStorageState from "../hooks/use-local-storage-state";
-import cubicBezierInterpolation from "../utilities/cubic-bezier-interpolation";
-import supportsTouch from "../utilities/supports-touch";
-import defaultListenerOptions from "../utilities/default-listener-options";
-import { raf, caf } from "../utilities/animation-frame";
+import cubicBezierInterpolation from "../utils/cubic-bezier-interpolation";
+import supportsTouch from "../utils/supports-touch";
+import defaultListenerOptions from "../utils/default-listener-options";
+import { raf, caf } from "../utils/animation-frame";
 import bezierEasing from "bezier-easing";
 import "./scroll-snap.css";
 
