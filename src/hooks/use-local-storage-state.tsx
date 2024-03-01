@@ -32,3 +32,5 @@ const useLocalStorageState = <T,>(
 };
 
 export default useLocalStorageState;
+
+// TODO use cookies instead
