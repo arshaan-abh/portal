@@ -16,6 +16,7 @@ const Step1Section: FC = () => {
       />
       <div className="flex w-full grow flex-col items-center justify-center gap-2">
         <Step
+          stepNumber={2}
           image={
             <Image
               src={two}

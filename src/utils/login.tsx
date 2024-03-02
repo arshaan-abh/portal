@@ -1,6 +1,8 @@
 "use server";
 import "server-only";
 
+import { cookies } from "next/headers";
+
 export const preload = () => {
   // void passwordLessLoginOrRegister();
 };
@@ -11,6 +13,8 @@ export const passwordLessLoginOrRegister = async (
   formData: FormData,
 ) => {
   "use server";
+  const cookieStore = cookies();
+
   try {
     const response = await fetch(
       "https://idp.iportals.ir/api/Account/PasswordLessLoginOrRegister",
@@ -33,9 +37,10 @@ export const passwordLessLoginOrRegister = async (
         result += decoder.decode(value);
       }
     const finalRes = JSON.parse(result) as ServerResponse;
-    if (finalRes.status === 1)
+    if (finalRes.status === 1) {
+      cookieStore.set("mobile", formData.get("mobile")?.toString() ?? "");
       return { message: "کد فرستاده شد، برای مرحله بعد به پایین بروید" };
-    else return { message: "دوباره امتحان کنید" };
+    } else return { message: "دوباره امتحان کنید" };
   } catch (error) {
     console.log(error);
     return { message: error as string };

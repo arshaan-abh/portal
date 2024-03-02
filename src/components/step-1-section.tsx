@@ -8,6 +8,7 @@ const Step1Section: FC = () => {
     <div className="flex h-full flex-col items-center">
       <div className="flex w-full grow flex-col items-center justify-center gap-2 bg-red">
         <Step
+          stepNumber={1}
           image={
             <Image
               src={one}

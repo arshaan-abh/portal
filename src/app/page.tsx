@@ -10,7 +10,7 @@ import Step5Section from "@/components/step-5-section";
 import Step6Section from "@/components/step-6-section";
 import Step7Section from "@/components/step-7-section";
 import Footer from "@/components/footer";
-import { preload } from "@/utils/get-item";
+import { preload } from "@/utils/login";
 
 const Home: FC = () => {
   preload();

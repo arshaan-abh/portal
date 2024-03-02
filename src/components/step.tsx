@@ -1,8 +1,9 @@
 "use client";
-import { passwordLessLoginOrRegister } from "@/utils/get-item";
 import { ReactNode, HTMLInputTypeAttribute, FC } from "react";
 import SubmitButton from "./submit-button";
 import { useFormState } from "react-dom";
+import { passwordLessLoginOrRegister } from "@/utils/login";
+import { confirmPasswordLessLogin } from "@/utils/check-code";
 
 interface StepProps {
   image: ReactNode;
@@ -11,6 +12,7 @@ interface StepProps {
   inputType: HTMLInputTypeAttribute;
   color: "light" | "dark";
   buttonText: string;
+  stepNumber: number;
 }
 const initialState = {
   message: "",
@@ -22,11 +24,12 @@ const Step: FC<StepProps> = ({
   color,
   inputType,
   placeholder,
+  stepNumber,
 }) => {
-  const [state, formAction] = useFormState(
-    passwordLessLoginOrRegister,
-    initialState,
-  );
+  const action =
+    stepNumber === 1 ? passwordLessLoginOrRegister : confirmPasswordLessLogin;
+  const inputName = stepNumber === 1 ? "mobile" : "code";
+  const [state, formAction] = useFormState(action, initialState);
 
   return (
     <>
@@ -38,7 +41,7 @@ const Step: FC<StepProps> = ({
         action={formAction}
       >
         <input
-          name="mobile"
+          name={inputName}
           type={inputType}
           placeholder={placeholder}
           className={`rounded-full p-2 text-center text-black placeholder:text-neutral-500 ${
