@@ -9,7 +9,6 @@ export const confirmPasswordLessLogin = async (
 ) => {
   "use server";
   const cookieStore = cookies();
-  console.log(cookieStore.get("mobile"));
   try {
     const response = await fetch(
       "https://idp.iportals.ir/api/Account/ConfirmPasswordLessLogin",
@@ -23,15 +22,7 @@ export const confirmPasswordLessLogin = async (
         }),
       },
     );
-    console.log({
-      headers: { "Content-Type": "application/json" },
-      method: "POST",
-      cache: "no-store",
-      body: JSON.stringify({
-        mobile: cookieStore.get("mobile")?.value ?? "",
-        code: formData.get("code"),
-      }),
-    });
+
     const reader = response.body?.getReader();
     const decoder = new TextDecoder("utf-8");
     let result = "";
@@ -44,7 +35,6 @@ export const confirmPasswordLessLogin = async (
         result += decoder.decode(value);
       }
     const finalRes = JSON.parse(result) as ServerResponse;
-    console.log(finalRes);
     if (finalRes.status === 1) {
       cookieStore.set(
         "token",
@@ -53,7 +43,6 @@ export const confirmPasswordLessLogin = async (
       return { message: "کد تایید شد، برای مرحله بعد به پایین بروید" };
     } else return { message: "دوباره امتحان کنید" };
   } catch (error) {
-    console.log(error);
     return { message: error as string };
   }
 };

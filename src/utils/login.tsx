@@ -42,7 +42,6 @@ export const passwordLessLoginOrRegister = async (
       return { message: "کد فرستاده شد، برای مرحله بعد به پایین بروید" };
     } else return { message: "دوباره امتحان کنید" };
   } catch (error) {
-    console.log(error);
     return { message: error as string };
   }
 };
