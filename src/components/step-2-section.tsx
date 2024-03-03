@@ -1,15 +1,29 @@
+"use client";
 import type { FC } from "react";
 import Image from "next/image";
 import downSmall from "/public/down-small.png";
+import { useFormState } from "react-dom";
+import { editUserProfile } from "@/utils/edit-profile";
+import SubmitButton from "./submit-button";
+
+const initialState = {
+  message: "",
+};
 
 const Step2Section: FC = () => {
+  const [state, formAction] = useFormState(editUserProfile, initialState);
+
   return (
-    <div className="flex flex-col items-center gap-4 bg-red text-white">
+    <form
+      action={formAction}
+      className="flex flex-col items-center gap-4 bg-red text-white"
+    >
       <div className="grow" />
       <h3 className="text-2xl font-semibold">اطلاعات هویتی</h3>
       <div>ثبت نام</div>
       <div className="grid w-1/2 grid-cols-2 grid-rows-2 gap-4">
         <input
+          name="fullName"
           type="text"
           placeholder="نام و نام خانوادگی"
           className="rounded-full border border-white bg-transparent p-4 text-start placeholder:text-white"
@@ -31,9 +45,9 @@ const Step2Section: FC = () => {
         />
       </div>
       <div className="flex flex-col gap-2">
-        <a className="rounded-full bg-white px-8 py-4 text-black">
-          ایجاد وب سایت
-        </a>
+        <SubmitButton className="rounded-full bg-white px-8 py-4 text-black">
+          {state?.message !== "" && state ? state.message : "ایجاد وب سایت"}
+        </SubmitButton>
         <a className="text-end text-sm text-white">عضو هستم</a>
       </div>
       <div className="grow" />
@@ -42,7 +56,7 @@ const Step2Section: FC = () => {
         alt="به سمت پایین اسکرول کنید"
         className="pointer-events-none mb-4 animate-bounce select-none"
       />
-    </div>
+    </form>
   );
 };
 
