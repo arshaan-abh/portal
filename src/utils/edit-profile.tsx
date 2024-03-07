@@ -14,7 +14,7 @@ export const editUserProfile = async (
 
   try {
     const response = await fetch(
-      "https://idp.iportals.ir/api/User/EditUserProfile",
+      "https://idp.iportals.ir/api/account/editprofile",
       {
         headers: {
           "Content-Type": "application/json",
@@ -25,6 +25,7 @@ export const editUserProfile = async (
         body: JSON.stringify({
           // token,
           fullName: formData.get("fullName"),
+          mobile: cookieStore.get("mobile")?.value ?? "",
         }),
       },
     );
@@ -43,11 +44,11 @@ export const editUserProfile = async (
     const finalRes = JSON.parse(result) as ServerResponse;
 
     if (finalRes.status === 1) {
-      return { message: "کد تایید شد، برای مرحله بعد به پایین بروید" };
+      return { message: "اطلاعات ثبت شدند، برای مرحله بعد به پایین بروید" };
     } else return { message: "دوباره امتحان کنید" };
   } catch (error) {
     console.log(error);
-    // return { message: error as string };
+    return { message: "دوباره امتحان کنید" };
   }
 };
 
