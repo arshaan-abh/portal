@@ -26,6 +26,8 @@ export const editUserProfile = async (
           // token,
           fullName: formData.get("fullName"),
           mobile: cookieStore.get("mobile")?.value ?? "",
+          password: formData.get("password"),
+          email: formData.get("email"),
         }),
       },
     );

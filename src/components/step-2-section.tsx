@@ -29,6 +29,7 @@ const Step2Section: FC = () => {
           className="rounded-full border border-white bg-transparent p-4 text-start placeholder:text-white"
         />
         <input
+          name="email"
           type="email"
           placeholder="ایمیل"
           className="rounded-full border border-white bg-transparent p-4 text-start placeholder:text-white"
@@ -39,6 +40,7 @@ const Step2Section: FC = () => {
           className="rounded-full border border-white bg-transparent p-4 text-start placeholder:text-white"
         />
         <input
+          name="password"
           type="password"
           placeholder="رمز عبور"
           className="rounded-full border border-white bg-transparent p-4 text-start placeholder:text-white"
@@ -46,7 +48,9 @@ const Step2Section: FC = () => {
       </div>
       <div className="flex flex-col gap-2">
         <SubmitButton className="rounded-full bg-white px-8 py-4 text-black">
-          {state?.message !== "" && state ? state.message : "ایجاد وب سایت"}
+          {state.message !== "" && state.message
+            ? state.message
+            : "ایجاد وب سایت"}
         </SubmitButton>
         <a className="text-end text-sm text-white">عضو هستم</a>
       </div>
