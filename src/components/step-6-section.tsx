@@ -2,8 +2,8 @@ import type { FC } from "react";
 import Image from "next/image";
 import down from "/public/down.png";
 import six from "/public/six.png";
-import triangle from "/public/triangle.png";
 import downSmall from "/public/down-small.png";
+import { Card } from "./card";
 
 const cards = [
   {
@@ -38,7 +38,7 @@ const Step6Section: FC = () => {
         <h3 className="mb-4 text-2xl font-semibold">پنل پرداخت</h3>
         <div className="flex w-1/2 gap-4">
           {cards.map((card, index) => (
-            <Card {...card} key={index} />
+            <Card id={index} {...card} key={index} />
           ))}
         </div>
       </div>
@@ -53,29 +53,3 @@ const Step6Section: FC = () => {
 };
 
 export default Step6Section;
-
-interface CardProps {
-  title: string;
-  description: string;
-  content: string;
-}
-
-export const Card: FC<CardProps> = ({ title, content, description }) => {
-  return (
-    <div className="flex basis-1/3 flex-col items-center bg-gray-200 text-center">
-      <div className="w-full bg-red px-4 py-2 text-lg font-medium text-white">
-        {title}
-      </div>
-      <Image
-        className="pointer-events-none mb-4 select-none"
-        src={triangle}
-        alt="پایین"
-      />
-      <div className="mb-4 font-medium">{description}</div>
-      <div className="mb-8">{content}</div>
-      <a className="mb-4 rounded-full bg-red px-4 py-2 text-sm text-white">
-        تست رایگان
-      </a>
-    </div>
-  );
-};
