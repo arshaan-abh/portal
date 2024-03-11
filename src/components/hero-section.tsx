@@ -23,7 +23,7 @@ const HeroSection: FC = () => {
         alt="سیاره‌ها"
       />
       <Image
-        className="pointer-events-none absolute bottom-0 left-0 animate-rocket select-none"
+        className="pointer-events-none absolute bottom-[4.5rem] left-0 max-w-[50%] animate-rocket select-none sm:bottom-0"
         src={rocket}
         alt="سفینه"
       />

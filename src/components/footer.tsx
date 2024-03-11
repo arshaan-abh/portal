@@ -7,7 +7,7 @@ import stars from "/public/stars.png";
 const Footer: FC = () => {
   return (
     <div className="relative z-10 flex flex-col items-center overflow-hidden bg-sky">
-      <div className="z-10 flex w-main max-w-full justify-center gap-8 p-4 text-white">
+      <div className="z-10 hidden w-main max-w-full justify-center gap-8 p-4 text-white sm:flex">
         <a>قالب‌ها</a>
         <a>امکانات</a>
         <a>نمونه‌ها</a>
