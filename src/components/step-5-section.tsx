@@ -18,7 +18,6 @@ const Step5Section: FC = () => {
     <div className="flex flex-col items-center">
       <div className="pointer-events-none h-[207px] w-full animate-border select-none bg-gray-100 bg-border bg-repeat-x" />
       <form
-        method="post"
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         action={setDomain}
         className="flex w-full grow flex-col items-center gap-4 bg-red"
