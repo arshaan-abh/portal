@@ -3,25 +3,7 @@ import Image from "next/image";
 import down from "/public/down.png";
 import six from "/public/six.png";
 import downSmall from "/public/down-small.png";
-import { Card } from "./card";
-
-const cards = [
-  {
-    title: "مبتدی",
-    description: "۶۰ هزار تومان / ماهانه",
-    content: "دوره پرداخت یک ساله و به مبلغ ۵۷۶,۰۰۰",
-  },
-  {
-    title: "استاندارد",
-    description: "۲۰۸ هزار تومان / ماهانه",
-    content: "دوره پرداخت یک ساله و به مبلغ ۲,۴۹۶,۰۰۰",
-  },
-  {
-    title: "پیشرفته",
-    description: "۴۹۶ هزار تومان / ماهانه",
-    content: "دوره پرداخت یک ساله و به مبلغ ۵,۹۵۲,۰۰۰",
-  },
-];
+import Panels from "./panels";
 
 const Step6Section: FC = () => {
   return (
@@ -36,11 +18,7 @@ const Step6Section: FC = () => {
       <div className="flex w-full flex-col items-center gap-4">
         <Image src={six} alt="مرحله ششم" />
         <h3 className="mb-4 text-2xl font-semibold">پنل پرداخت</h3>
-        <div className="flex w-1/2 gap-4">
-          {cards.map((card, index) => (
-            <Card id={index} {...card} key={index} />
-          ))}
-        </div>
+        <Panels />
       </div>
       <div className="grow" />
       <Image

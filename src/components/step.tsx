@@ -36,7 +36,7 @@ const Step: FC<StepProps> = ({
       {image}
       <h3 className="mb-2 text-2xl font-semibold text-white">{title}</h3>
       <form
-        className="flex w-1/4 flex-col gap-2"
+        className="flex w-3/4 flex-col gap-2 sm:w-1/2 lg:w-1/4"
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         action={formAction}
       >

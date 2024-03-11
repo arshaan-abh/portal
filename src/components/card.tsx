@@ -23,7 +23,7 @@ export const Card: FC<CardProps> = ({ title, content, description, id }) => {
   return (
     <form
       action={formAction}
-      className="flex basis-1/3 flex-col items-center bg-gray-200 text-center"
+      className="flex flex-col items-center bg-gray-200 text-center"
     >
       <div className="w-full bg-red px-4 py-2 text-lg font-medium text-white">
         {title}
@@ -33,8 +33,8 @@ export const Card: FC<CardProps> = ({ title, content, description, id }) => {
         src={triangle}
         alt="پایین"
       />
-      <div className="mb-4 font-medium">{description}</div>
-      <div className="mb-8">{content}</div>
+      <div className="mb-4 px-4 font-medium">{description}</div>
+      <div className="mb-8 px-4">{content}</div>
       <SubmitButton className="mb-4 rounded-full bg-red px-4 py-2 text-sm text-white">
         {state.message !== "" && state.message ? state.message : "تست رایگان"}
       </SubmitButton>

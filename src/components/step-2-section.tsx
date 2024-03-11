@@ -21,7 +21,7 @@ const Step2Section: FC = () => {
       <div className="grow" />
       <h3 className="text-2xl font-semibold">اطلاعات هویتی</h3>
       <div>ثبت نام</div>
-      <div className="grid w-1/2 grid-cols-2 grid-rows-2 gap-4">
+      <div className="grid w-3/4 grid-rows-2 gap-4 md:grid-cols-2 lg:w-1/2">
         <input
           name="fullName"
           type="text"

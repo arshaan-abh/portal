@@ -22,13 +22,14 @@ const Step5Section: FC = () => {
         action={setDomain}
         className="flex w-full grow flex-col items-center gap-4 bg-red"
       >
+        <div className="grow" />
         <Image
           src={five}
           className="pointer-events-none select-none"
-          alt="مرحله دوم"
+          alt="مرحله پنجم"
         />
         <h3 className="mb-4 text-2xl font-semibold text-white">انتخاب دامنه</h3>
-        <div className="flex w-1/4 flex-col gap-4">
+        <div className="flex w-3/4 flex-col gap-4 sm:w-1/2 lg:w-1/4">
           <input
             name="domain"
             type="text"

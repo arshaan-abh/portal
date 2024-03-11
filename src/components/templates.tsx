@@ -17,19 +17,20 @@ const templates = [
 const Templates: FC = () => {
   return (
     <Carousel
+      className="px-8"
+      style={{ direction: "ltr" }}
       opts={{
-        align: "start",
-        loop: true,
+        align: "center",
       }}
       plugins={[
         Autoplay({
-          delay: 3000,
+          delay: 2000,
         }),
       ]}
     >
       <CarouselContent className="-ml-4">
         {templates.map((template, index) => (
-          <CarouselItem className="basis-1/3 pl-4" key={index}>
+          <CarouselItem className="pl-4 sm:basis-1/3" key={index}>
             <Card image={template.image} name={template.name} />
           </CarouselItem>
         ))}
@@ -46,7 +47,7 @@ interface CardProps {
 }
 
 const Card: FC<CardProps> = ({ image, name }) => {
-  return <Image src={image} alt={name} />;
+  return <Image className="w-full" src={image} alt={name} />;
 };
 
 // TODO implement carousel item's design
