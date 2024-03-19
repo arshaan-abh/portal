@@ -11,7 +11,7 @@ export const confirmPasswordLessLogin = async (
   const cookieStore = cookies();
   try {
     const response = await fetch(
-      "https://idp.iportals.ir/api/Account/ConfirmPasswordLessLogin",
+      process.env.AUTH_HOST + "api/Account/ConfirmPasswordLessLogin",
       {
         headers: { "Content-Type": "application/json" },
         method: "POST",
