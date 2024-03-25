@@ -11,7 +11,8 @@ export const confirmPasswordLessLogin = async (
   const cookieStore = cookies();
   try {
     const response = await fetch(
-      process.env.AUTH_HOST + "api/Account/ConfirmPasswordLessLogin",
+      process.env.NEXT_PUBLIC_AUTH_HOST +
+        "api/Account/ConfirmPasswordLessLogin",
       {
         headers: { "Content-Type": "application/json" },
         method: "POST",

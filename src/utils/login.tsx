@@ -17,7 +17,8 @@ export const passwordLessLoginOrRegister = async (
 
   try {
     const response = await fetch(
-      process.env.AUTH_HOST + "api/Account/PasswordLessLoginOrRegister",
+      process.env.NEXT_PUBLIC_AUTH_HOST +
+        "api/Account/PasswordLessLoginOrRegister",
       {
         headers: { "Content-Type": "application/json" },
         method: "POST",
