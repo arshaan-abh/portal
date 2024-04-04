@@ -17,8 +17,7 @@ export const passwordLessLoginOrRegister = async (
 
   try {
     const response = await fetch(
-      process.env.NEXT_PUBLIC_AUTH_HOST +
-        "api/Account/PasswordLessLoginOrRegister",
+      "https://idp.iportals.ir/" + "api/Account/PasswordLessLoginOrRegister",
       {
         headers: { "Content-Type": "application/json" },
         method: "POST",
