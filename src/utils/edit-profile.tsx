@@ -14,7 +14,7 @@ export const editUserProfile = async (
 
   try {
     const response = await fetch(
-      "https://idp.iportals.ir/" + "api/account/editprofile",
+      process.env.NEXT_PUBLIC_AUTH_HOST + "api/account/editprofile",
       {
         headers: {
           "Content-Type": "application/json",

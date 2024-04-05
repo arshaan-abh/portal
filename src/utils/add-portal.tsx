@@ -11,7 +11,7 @@ export const addPortal = async (prevState: unknown, formData: FormData) => {
 
   try {
     const response = await fetch(
-      "https://api.iportals.ir/" + "portal/api/Portal/AddPortal",
+      process.env.NEXT_PUBLIC_PORTAL_HOST + "portal/api/Portal/AddPortal",
       {
         headers: {
           "Content-Type": "application/json",
