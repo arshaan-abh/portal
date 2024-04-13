@@ -9,6 +9,12 @@ const Step7Section: FC = () => {
       <div className="grow" />
       <Image src={seven} alt="مرحله هفتم" />
       <h3 className="mb-2 text-2xl font-semibold">پرداخت</h3>
+      <a
+        className="rounded-full bg-red px-4 py-2 text-sm text-white"
+        href="https://admin.iportals.ir/"
+      >
+        رفتن به داشبورد
+      </a>
       <div className="grow" />
       <Image
         src={downSmall}
